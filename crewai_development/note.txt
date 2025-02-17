@@ -1,0 +1,14 @@
+Creating Agents Cheat Sheet:
+- Think like a boss. Work backwards from the goal and think which employee
+you need to hire to get the job done.
+Define the Captain of the crew who orient the other agents towards the goal.
+- Define which experts the captain needs to communicate with and delegate tasks to.
+Build a top down structure of the crew.
+Goal:
+Captain/Manager/Boss:
+Employees/Experts to hire:
+Notes:
+- Agents should be results driven and have a clear goal in mind
+- Role is their job title
+Goals should actionable
+- Backstory should be their resume
