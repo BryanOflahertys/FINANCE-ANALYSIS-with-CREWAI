@@ -1,0 +1,111 @@
+financial_analysis:
+  description: >
+    Analyze {company_stock}'s financial health using **quantitative metrics only**. 
+    Required criteria:
+    - P/E ratio (compare to industry average)
+    - Revenue growth (last 3 quarters)
+    - Debt-to-equity ratio (highlight if above 1.0)
+    - Free cash flow trend (last 2 years)
+    - EPS growth (year-over-year)
+    - Current price vs. 52-week high/low
+    Do NOT consider qualitative factors like news or sentiment. Focus strictly on numbers.
+
+  expected_output: >
+    A structured financial report for {company_stock} with:
+    1. Key Metrics Table (P/E, Revenue Growth, Debt-to-Equity, etc.)
+    2. Industry Comparison
+    3. Financial Health Score (1-10 scale)
+    4. Immediate Red Flags (if any)
+
+research:
+  description: >
+    Gather **only the last 30 days** of news/press releases for {company_stock} from credible financial sources.
+    Focus on:
+    - Earnings announcements
+    - Mergers/acquisitions
+    - Leadership changes
+    - Product launches
+    Categorize sentiment as Positive/Neutral/Negative.
+    Ignore opinion pieces or analyst predictions.
+
+  expected_output: >
+    A news analysis report containing:
+    1. Date-Sorted News Events (Last 30 Days)
+    2. Sentiment Classification per Event
+    3. Impact Score (1-5) for Each Event
+    4. Total Positive/Negative Events Count
+
+filings_analysis:
+  description: >
+    Analyze {company_stock}'s latest SEC filings with focus on:
+    - Revenue recognition methods (Note any changes)
+    - Contingent liabilities (Section 8 of 10-K)
+    - Related-party transactions
+    - Stock-based compensation trends
+    - Management's growth projections (MD&A section)
+    Highlight any accounting irregularities.
+
+  expected_output: >
+    SEC Filings Report with:
+    1. Key Filing Excerpts
+    2. Risk Factor Summary
+    3. Insider Trading Activity Table
+    4. Accounting Practice Assessment
+
+stock_action_prediction:
+  description: >
+    Make a Buy/Hold/Sell recommendation for {company_stock} using:
+    [Financial Weighting] 40% - Financial Health Score
+    [Technical Weighting] 30% - RSI (14-day) and 50/200-day MA crossover
+    [Sentiment Weighting] 20% - News Sentiment Ratio
+    [Filings Weighting] 10% - SEC Red Flags
+    
+    If Financial Health Score < 5: Automatic Sell
+    If RSI > 70: Consider Overbought
+    If Negative News > 3: Apply Penalty
+    
+    Format recommendation as:
+    Recommendation: [Buy/Hold/Sell]
+    Confidence Level: [X/10]
+    Time Horizon: [Short/Medium/Long Term]
+
+  expected_output: >
+    Structured Recommendation:
+    ===
+    Recommendation: [Buy/Hold/Sell]
+    Confidence: X/10
+    Time Horizon: [X Months]
+    ---
+    Financial Justification: [2-3 bullet points]
+    Technical Justification: [2-3 bullet points]
+    Risk Factors: [List]
+    ===
+
+recommend:
+  description: >
+    Final recommendation MUST follow this template:
+    
+    # {company_stock} Investment Recommendation
+    ## Final Verdict: [Buy/Hold/Sell]
+    ### Confidence: X/10
+    ### Time Horizon: X Months
+    
+    **Financial Analysis**
+    - [Key metric 1]
+    - [Key metric 2]
+    
+    **Technical Analysis** 
+    - [Indicator 1 status]
+    - [Indicator 2 status]
+    
+    **Risk Advisory**
+    - Top 3 risks
+    
+    **Actionable Steps**
+    - Entry Price: $X
+    - Target Price: $Y
+    - Stop Loss: $Z
+
+  expected_output: >
+    Strictly formatted Markdown report matching the template above. 
+    No speculative language. Only use data from previous analyses.
